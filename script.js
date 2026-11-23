@@ -12,3 +12,15 @@ document.querySelectorAll('[data-cert]').forEach(function (a) {
   a.target = '_blank';
   a.rel = 'noopener';
 });
+
+/* плавное появление блоков при прокрутке */
+(function () {
+  if (!('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const items = document.querySelectorAll('section.wrap, .p-grid article, .p-row');
+  const io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (en) {
+      if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); }
+    });
+  }, { threshold: 0.12 });
+  items.forEach(function (el) { el.classList.add('reveal'); io.observe(el); });
+})();
