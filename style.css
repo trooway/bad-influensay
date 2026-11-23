@@ -539,28 +539,19 @@ footer p + p {
 .mini-list b { color: var(--pink); font-weight: 600; }
 .mini-list a { font-weight: 500; text-decoration: none; border-bottom: 1px solid var(--graphite); }
 
-/* certificate dialog */
-.cert-dialog {
-  border: 0; padding: 28px 24px 24px; width: min(440px, calc(100vw - 28px));
-  background: var(--white); color: var(--graphite); margin: auto; position: fixed;
+
+/* v3 */
+.btn.sm { padding: 11px 18px; }
+.hero-cta .btn { padding: 11px 20px; }
+.hero-cta { gap: 18px; }
+.logo-box { width: 64px; height: 40px; }
+.logo-box.text-logo { font-size: .6rem; }
+.hero-partners { gap: 8px; }
+.more { margin-top: 24px; }
+.p-row {
+  display: flex; flex-wrap: wrap; gap: 8px 18px; align-items: baseline;
+  margin-top: 40px; padding-top: 18px; border-top: 1px solid rgba(255,255,255,.2); font-size: .85rem;
 }
-.cert-dialog::backdrop { background: rgba(10,10,10,.72); }
-.cert-dialog h2 { font-size: 1.7rem; margin: 14px 0 8px; }
-.cert-dialog p { font-size: .88rem; margin-bottom: 14px; }
-.dlg-close { position: absolute; top: 8px; right: 12px; border: 0; background: none; font-size: 1.8rem; line-height: 1; cursor: pointer; color: var(--black); }
-.cert-card {
-  background: linear-gradient(135deg, var(--pink), #ff7ac1); color: #fff; padding: 22px 20px;
-  display: flex; flex-direction: column; gap: 6px; min-height: 120px; justify-content: center;
-}
-.cert-card small { font-size: .68rem; letter-spacing: .1em; text-transform: uppercase; opacity: .85; }
-.cert-card strong { font-family: var(--head); font-size: 1.6rem; text-transform: uppercase; font-weight: 600; line-height: 1; }
-.cert-form { display: grid; gap: 10px; }
-.cert-form label.field { display: grid; gap: 4px; font-size: .72rem; text-transform: uppercase; letter-spacing: .05em; }
-.cert-form input[type=text], .cert-form input[type=tel] {
-  font: inherit; font-size: .95rem; padding: 12px; border: 1px solid var(--beige); background: var(--plat); text-transform: none; letter-spacing: 0;
-}
-.cert-form .consent { display: flex; gap: 8px; align-items: flex-start; font-size: .7rem; color: #666; line-height: 1.35; }
-.cert-form .consent input { margin-top: 2px; accent-color: var(--pink); }
-.form-error { color: #c1121f; font-size: .78rem; min-height: 1em; margin: 0; }
-.cert-dialog .btn { width: 100%; text-align: center; }
+.p-row .tag { margin: 0; }
+.p-row span:nth-child(2) { opacity: .75; }
 [hidden] { display: none !important; }
