@@ -620,3 +620,38 @@ footer p + p {
   .tcard { max-width: none; }
 }
 @media(prefers-reduced-motion: reduce) { .tcard, .tcard:hover { transition: none; } }
+
+
+/* ===== v5: логотипы и одинаковые карточки партнёров ===== */
+.logo-box { width: 78px; height: 48px; padding: 4px; background: var(--white); }
+.logo-box.wide { width: 110px; }
+.logo-box.pinkbg { background: #F6A9C4; padding: 0; }
+.logo-box img { object-fit: contain; }
+
+.p-grid { align-items: stretch !important; }
+.p-grid article { display: flex; flex-direction: column; }
+.p-grid .p-logo {
+  background: var(--white); aspect-ratio: 4/3; padding: 7%; margin-bottom: 18px; flex: 0 0 auto;
+}
+.p-grid .p-logo.pinkbg { background: #F6A9C4; padding: 0; }
+.p-grid .p-logo img { width: 100%; height: 100%; object-fit: contain; }
+.partners .meta { margin: -6px 0 14px; font-size: .75rem; opacity: .55; }
+.p-grid .p-actions { margin-top: auto; padding-top: 6px; align-items: center; }
+
+@media(min-width: 760px) {
+  .p-grid article:last-child:nth-child(odd) {
+    grid-column: 1 / -1; display: grid; grid-template-columns: 1fr 1fr; column-gap: 32px; align-content: center;
+  }
+  .p-grid article:last-child:nth-child(odd) .p-logo { grid-row: 1 / span 4; margin-bottom: 0; aspect-ratio: 16/10; }
+  .p-grid article:last-child:nth-child(odd) .p-actions { margin-top: 0; }
+}
+
+/* фото команды: лицо в верхней части кадра */
+.tphoto img { object-position: center 22%; }
+
+/* v5 fix: логотип вписывается в рамку целиком */
+.p-grid .p-logo { position: relative; padding: 0; }
+.p-grid .p-logo img { position: absolute; inset: 7%; width: 86%; height: 86%; object-fit: contain; }
+.p-grid .p-logo.pinkbg img { inset: 0; width: 100%; height: 100%; }
+.p-grid .p-logo, .logo-box { background-color: #fdfefe; }
+.p-grid .p-logo.pinkbg, .logo-box.pinkbg { background-color: #F6A9C4; }
